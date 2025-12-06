@@ -14,7 +14,7 @@ jobs:
 
   echo-goodbye:
     name: Echo goodbye
-    runs-on: Ubunutu-latest
+    runs-on: Ubuntu-latest
     steps:
       - name: Failed step
         run: |
