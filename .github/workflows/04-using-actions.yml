@@ -18,14 +18,13 @@ jobs:
             
             - name: Install dependencies
               run: |
-                cd 04-using-actions/react-app
                 npm install
                 npm ci
+              working-directory: 04-using-actions/react-app
 
             - name: Run Unit Test
-              run: |
-                cd 04-using-actions/react-app
-                npm run test
+              run: npm run test
+              working-directory: 04-using-actions/react-app
             
         
             
