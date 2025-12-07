@@ -19,6 +19,7 @@ jobs:
             - name: Install dependencies
               run: |
                 cd 04-using-actions/react-app
+                npm install
                 npm ci
 
             
