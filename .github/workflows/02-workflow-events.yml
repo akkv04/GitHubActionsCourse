@@ -1,0 +1,16 @@
+name: 02 - Workflow Events
+
+on: 
+  push
+
+jobs:
+  echo:
+    name: echo
+    runs-on: ubunut-latest
+    steps:
+      - name: Show the trigger
+        run: |
+        echo "Workflow is triggered by ${{github.event_name}} condition"
+        echo "Workflow is triggered by ${{github.ref_name}} branch"
+        
+
