@@ -23,5 +23,6 @@ jobs:
         run: |
           echo "Workflow is triggered by ${{github.event_name}} condition"
           echo "Workflow is triggered by ${{github.ref_name}} branch"
+          echo "Values i ${{github.event.inputs.input_value}}"
 
 
