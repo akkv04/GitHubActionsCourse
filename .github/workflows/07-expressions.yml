@@ -7,6 +7,8 @@ on:
                 default: false
                 type: boolean
 
+run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug }}
+
 jobs:
     Echo:
         name: Echo
@@ -18,8 +20,8 @@ jobs:
                 echo "Triggered by: ${{ github.event_name }}"
                 echo "Branch: ${{ github.ref }}"
                 echo "Commit SHA: ${{ github.sha }}"
-                echo "Runner OS : ${{ Runner.OS }}"
-                echo "Commit id: ${{ github.Commit }}"
+                echo "Runner OS : ${{ runner.os }}"
+                echo "Commit id: ${{ github.commit }}"
 
             - name:  Print when triggered from main
               if:  ${{ inputs.debug }} == 'true' && ${{ github.ref_name }} == 'main'
