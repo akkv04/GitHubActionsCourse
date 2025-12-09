@@ -59,6 +59,13 @@ jobs:
             echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
             echo "Environment var: ${{ vars.TARGET_VAR }}"
     
+    echo-undefined:
+      name: echo undefined
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print undefined variables
+          run: |
+            echo "Org var: ${{ vars.UNDEFINED_VAR}}"
 
       
 
