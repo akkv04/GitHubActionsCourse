@@ -21,7 +21,7 @@ jobs:
                 echo "Branch: ${{ github.ref }}"
                 echo "Commit SHA: ${{ github.sha }}"
                 echo "Runner OS : ${{ runner.os }}"
-                echo "Commit id: ${{ github.commit }}"
+            
 
             - name:  Print when triggered from main
               if:  ${{ inputs.debug   && github.ref_name == 'main' }} 
