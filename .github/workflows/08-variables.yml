@@ -3,6 +3,11 @@ run-name: 08-Using Variables
 
 on: 
     workflow_dispatch:
+      inputs:
+        env_value:
+          type: choice
+          options: [prod, staging]
+
 
 env:
     WORKFLOW_VAR: "I am a workflow env var"
@@ -46,7 +51,7 @@ jobs:
     echo-Prod:
       name: Echo Prod
       runs-on: ubuntu-latest
-      environment: prod #set the environment to Prod
+      environment: ${{ inputs.env_value}} #set the environment to Prod
       steps:
         - name : Print prod variables
           run: |
