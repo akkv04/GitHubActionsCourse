@@ -49,7 +49,7 @@ jobs:
             echo "Repo var: ${{ vars.REPOSITORY_VAR}}"
     
     echo-Prod:
-      name: Echo Prod
+      name: Echo ${{ inputs.env_value }}
       runs-on: ubuntu-latest
       environment: ${{ inputs.env_value}} #set the environment to Prod
       steps:
