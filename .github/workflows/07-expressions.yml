@@ -24,7 +24,7 @@ jobs:
                 echo "Commit id: ${{ github.commit }}"
 
             - name:  Print when triggered from main
-              if:  ${{ inputs.debug   && github.ref_name }} == 'main'
+              if:  ${{ inputs.debug   && github.ref_name == 'main' }} 
               run: echo "I was triggered from main"
 
             - name: Hello World
