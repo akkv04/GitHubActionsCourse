@@ -4,7 +4,6 @@ run-name: 09-using functions
 
 on:
     pull_request:
-        types: [opened]
     workflow_dispatch:
 
 jobs:
