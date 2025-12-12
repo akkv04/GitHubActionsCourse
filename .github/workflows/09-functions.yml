@@ -1,7 +1,5 @@
 name: 09- using functions
 
-run-name: 09-using functions
-
 on:
     pull_request:
     workflow_dispatch:
