@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Failing step
-              run: exit 0
+              run: exit 1
             
             - name: Print PR title
               run: | 
