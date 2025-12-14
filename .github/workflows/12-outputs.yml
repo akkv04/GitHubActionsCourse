@@ -20,12 +20,12 @@ jobs:
         steps:
             - name: Print GITHUB _OUTPUT path
               run: |
-                echo '$GITHUB_OUTPUT'
+                echo $GITHUB_OUTPUT
             
             - name: Build
               id: build
               run: |
-                echo "status= ${{ inputs.build_status }}" >> '${GITHUB_OUTPUT}'
+                echo "status=${{ inputs.build_status }}" >> ${GITHUB_OUTPUT}
     
     deploy:
         name: deploy
