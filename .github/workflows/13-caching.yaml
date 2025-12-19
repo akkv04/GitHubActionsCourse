@@ -1,7 +1,7 @@
 name: 13-caching.yml
 
 on:
-    workflow_dispatchL:
+    workflow_dispatch:
         inputs:
             use-cache:
                 description: whether to execute cache step
