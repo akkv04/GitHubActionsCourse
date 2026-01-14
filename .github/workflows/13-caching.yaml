@@ -17,6 +17,27 @@ on:
                 default: 20.x
 
 jobs:
+    install-deps:
+        name: install-deps
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: 13-caching/react-app
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            
+            - name: setup Node
+              uses: actions/setup-node@v4
+            
+            - name: Calculate cache key
+              id: cache
+              uses: actions/cache@v3
+              with:
+                key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
+                path: 
+
+    
     build:
         name: build
         runs-on: ubuntu-latest
@@ -54,3 +75,4 @@ jobs:
 
             - name: Deploying to non-prod
               run: echo "Deploying to non-prod"
+        
