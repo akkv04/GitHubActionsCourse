@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-    echo:
+    Deploy-staging:
         name: Deploy-staging
         runs-on: ubuntu-latest
         environment: staging
