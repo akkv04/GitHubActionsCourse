@@ -21,6 +21,7 @@ jobs:
             my-env-value: ${{ vars.MY-ENV-VALUE || 'default value'}}
         steps:
             - name: Echo Vars,
-              run: echo "Env variable: ${{my-env-value}}"
+              run: |
+               echo "Env variable: ${{env.my-env-value}}"
 
 
