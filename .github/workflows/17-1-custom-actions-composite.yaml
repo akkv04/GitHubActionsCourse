@@ -27,6 +27,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
 
+            - name: list contents
+              run: ls -lrt
+
             - name: Setup Node and NPM Dependencies
               uses: ./.github/actions/composite-cache-deps@main
               with:
