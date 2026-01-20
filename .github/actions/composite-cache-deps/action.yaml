@@ -30,6 +30,7 @@ runs:
         shell: bash
         working-directory: ${{ inputs.working-dir }}
         run: |
+          npm install
           npm ci
 
 
