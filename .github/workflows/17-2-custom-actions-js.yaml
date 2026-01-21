@@ -1,9 +1,26 @@
 name: 17 - 2 - Custom Actions - JS
 
+
 on:
     workflow_dispatch:
+        inputs:
+            base_branch:
+                type: string
+                required: false
+                default: main
+            target-branch:
+                type: string
+                required: false
+                default: update-dependencies
+            working-dir:
+               type: string
+               required: true
+               default: 17-custom-actions/react-app
+            debug:
+                type: boolean
+                default: false
 
-run-name: 17 - 2 - Custom Actions - JS
+run-name: 17 - 2 - Custom Actions - JS - ${{inputs.base_branch}}--> ${{inputs.target-branch}} on ${{inputs.working-dir}}
 
 jobs:
     dependency-udpate:
@@ -15,3 +32,9 @@ jobs:
 
             - name: Check for dependency updates
               uses: ./.github/actions/js-dependency-update
+              with:
+                base-branch: ${{ inputs.base_branch}}
+                target-branch: ${{ inputs.target-branch}}
+                gh-token: ${{ secrets.GITHUB_TOKEN }}
+                working-directory: ${{ inputs.working-dir }}
+                debug: ${{ inputs.debug }}
