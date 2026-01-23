@@ -15,6 +15,10 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+            - name: check the path and list directories
+              run: |
+                pwd
+                ls -lrt
             - name: PING URL
               uses: ./.github/actions/docker-ping-url
               with:
