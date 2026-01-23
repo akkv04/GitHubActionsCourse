@@ -9,7 +9,7 @@ on:
                 default: 'https://www.google.com'
                 options:
                     - 'https://www.google.com'
-                    - 123.com
+                    - 'https:123.com'
             max_trial:
                 description: Maximum trials until action fails,
                 default: 10
